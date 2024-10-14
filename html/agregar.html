@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Patricio zjaria">
+    <meta name="Tema" content="Agregar auto">
+    <title>Agregar Auto</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Color de fondo general */
+        }
+        header {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .form-container {
+            background-color: #d4edda; /* Fondo del formulario */
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            max-width: 600px; /* Ancho máximo del formulario */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        h1 {
+            color: #007bff; /* Color del encabezado */
+        }
+        label {
+            font-weight: bold; /* Negrita para las etiquetas */
+        }
+        .form-control {
+            width: 100%; /* Asegura que los inputs ocupen el 100% del contenedor */
+            margin-bottom: 15px; /* Espaciado entre inputs */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Color de fondo del botón */
+            border: none; /* Sin borde */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Color de fondo al pasar el ratón */
+        }
+        footer {
+            margin-top: 20px;
+            color: #6c757d; /* Color del texto del pie de página */
+        }
+    </style>
+</head>
+<body>
+    <!--Cabezera-->
+    <header>
+        <h1>AGREGAR AUTO</h1>
+    </header>
+
+    <!--Formulario-->
+    <div class="container my-4">
+        <div class="form-container">
+            <form id="addCarForm">
+                <div class="mb-3">
+                    <label for="marca" class="form-label">Marca</label>
+                    <input type="text" class="form-control" id="marca" required>
+                </div>
+                <div class="mb-3">
+                    <label for="modelo" class="form-label">Modelo</label>
+                    <input type="text" class="form-control" id="modelo" required>
+                </div>
+                <div class="mb-3">
+                    <label for="anio" class="form-label">Año de Fabricación</label>
+                    <input type="number" class="form-control" id="anio" required>
+                </div>
+                <div class="mb-3">
+                    <label for="kilometraje" class="form-label">Kilometraje</label>
+                    <input type="number" class="form-control" id="kilometraje" required>
+                </div>
+                <div class="mb-3">
+                    <label for="precio" class="form-label">Precio</label>
+                    <input type="number" class="form-control" id="precio" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Agregar Auto</button>
+            </form>
+        </div>
+    </div>
+
+    <!--Pie de pagina-->
+    <footer class="text-center mt-4">
+        <p>&copy; Derechos reservados a la pagina 2024</p>
+    </footer>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('addCarForm');
+    const carList = JSON.parse(localStorage.getItem('cars')) || [];
+
+    // Mostrar autos al cargar la página
+    function displayCars() {
+        const carContainer = document.createElement('div');
+        carContainer.className = 'mt-4';
+        carContainer.innerHTML = '<h3>Autos Agregados</h3>';
+        carList.forEach(car => {
+            const carInfo = document.createElement('p');
+            carInfo.textContent = `Marca: ${car.marca}, Modelo: ${car.modelo}, Año: ${car.anio}, Kilometraje: ${car.kilometraje} Km, Precio: $${car.precio}`;
+            carContainer.appendChild(carInfo);
+        });
+        document.body.appendChild(carContainer);
+    }
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const marca = document.getElementById('marca').value;
+        const modelo = document.getElementById('modelo').value;
+        const anio = document.getElementById('anio').value;
+        const kilometraje = document.getElementById('kilometraje').value;
+        const precio = document.getElementById('precio').value;
+
+        const newCar = { marca, modelo, anio, kilometraje, precio };
+        carList.push(newCar);
+        localStorage.setItem('cars', JSON.stringify(carList));
+
+        alert(`Auto agregado:\nMarca: ${marca}\nModelo: ${modelo}\nAño: ${anio}\nKilometraje: ${kilometraje} Km\nPrecio: $${precio}`);
+        form.reset();
+        document.body.querySelector('div.mt-4')?.remove(); // Limpiar la lista previa
+        displayCars(); // Volver a mostrar los autos
+    });
+
+    displayCars(); // Mostrar autos al cargar la página
+});
+
+    </script>
+</body>
+</html>
+
+

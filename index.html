@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Patricio zjaria">
+    <meta name="Tema" content="Tienda de autos">
+    <meta name="Lenguajes" content="html/css/bootstrap">
+    <title>Tienda de autos</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Color de fondo general */
+        }
+        header {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav {
+            background-color: #007bff; /* Color azul del menú */
+        }
+        nav a {
+            color: white; /* Color del texto de los enlaces */
+            transition: color 0.3s; /* Transición suave al pasar el ratón */
+        }
+        nav a:hover {
+            color: #ffcc00; /* Color al pasar el ratón sobre los enlaces */
+        }
+        .navbar-brand {
+            font-weight: bold; /* Estilo para el nombre de la marca */
+        }
+        .card {
+            width: 250px; 
+            height: 400px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between;
+            text-align: center; 
+            margin: 10px; 
+            overflow: hidden; 
+            border: 1px solid #ccc; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+        .card-img-top {
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+            display: block;
+            margin: 0;
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+        .card-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        footer p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--Cabezera-->
+    <header>
+        <h1>USADOS TUCUMAN</h1>
+    </header>
+    <!--Menu-->
+    <nav class="navbar navbar-expand-lg" style="background-color: #007bff;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav w-100 d-flex justify-content-around">
+                    <li class="nav-item flex-fill text-center">
+                        <a class="nav-link text-white" href="index.html">INICIO</a>
+                    </li>
+                    <li class="nav-item flex-fill text-center">
+                        <a class="nav-link text-white" href="html/agregar.html">AGREGAR</a>
+                    </li>
+                    <li class="nav-item flex-fill text-center">
+                        <a class="nav-link text-white" href="html/listado.html">LISTADO</a>
+                    </li>
+                    <li class="nav-item flex-fill text-center">
+                        <a class="nav-link text-white" href="html/reclamos.html">RECLAMOS</a>
+                    </li>
+                    <li class="nav-item flex-fill text-center">
+                        <a class="nav-link text-white" href="html/contacto.html">CONTACTO</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Formulario-->
+    <div class="container my-4">
+        <form class="d-flex justify-content-center bg-success p-3 rounded">
+            <input class="form-control me-2" type="text" id="barra" name="barra" placeholder="Ingresa una Marca o Modelo">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
+    </div>
+    <!--Contenido Principal-->
+    <div class="card-group">
+        <div class="card-wrapper">
+            <div class="card">
+                <img src="img/Auto de Chevrolet.jpg" class="card-img-top" alt="Auto de Chevrolet">
+                <div class="card-body">
+                    <h5 class="card-title">Chevrolet</h5>
+                    <p class="card-text">Modelo: Prisma 1.4 Joy Ls</p>
+                    <p>Año de fabricacion: <strong>2019</strong></p>
+                    <p>Kilometraje: <strong>72286 Km</strong></p>
+                    <strong>Precio: $3080000</strong>
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper">
+            <div class="card">
+                <img src="img/Camioneta de Volkswagen.jpg" class="card-img-top" alt="Auto de Volkswagen">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen</h5>
+                    <p class="card-text">Modelo: Amarok 2.0 Cd Tdi</p>
+                    <p>Año de fabricacion: <strong>2022</strong></p>
+                    <p>Kilometraje: <strong>35200 Km</strong></p>
+                    <strong>Precio: $7480000</strong>
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper">
+            <div class="card">
+                <img src="img/Auto de toyota.jpg" class="card-img-top" alt="Auto de Toyota">
+                <div class="card-body">
+                    <h5 class="card-title">Toyota</h5>
+                    <p class="card-text">Modelo: Carolla 2.0 XLI</p>
+                    <p>Año de fabricacion: <strong>2021</strong></p>
+                    <p>Kilometraje: <strong>40445 Km</strong></p>
+                    <strong>Precio: $6170000</strong>
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper">
+            <div class="card">
+                <img src="img/Auto de Peugeot.jpg" class="card-img-top" alt="Auto de Peugeot">
+                <div class="card-body">
+                    <h5 class="card-title">Peugeot</h5>
+                    <p class="card-text">Modelo: 408 1.6 Allure Pack Hdi</p>
+                    <p>Año de fabricacion: <strong>2018</strong></p>
+                    <p>Kilometraje: <strong>90000 Km</strong></p>
+                    <strong>Precio: $3870000</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Pie de pagina-->
+    <footer class="text-center mt-4">
+        <p>&copy; Derechos reservados a la pagina 2024</p>
+    </footer>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // Evita el envío del formulario por defecto
+                
+                const input = document.getElementById('barra').value.trim();
+                
+                if (input === '') {
+                    alert('Por favor, ingresa una marca o modelo.'); // Alerta si el campo está vacío
+                } else {
+                    alert(`Buscando: ${input}`); // Mensaje de búsqueda
+                    // Aquí podrías agregar más lógica para buscar autos
+                }
+            });
+        });
+    </script>
+</body>
+</html>

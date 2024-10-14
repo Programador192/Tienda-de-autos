@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reclamos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Enlace a Bootstrap -->
+    <style>
+
+        header h1 {
+            text-align: center;
+        }
+
+        .nav {
+         display: flex;
+         justify-content: space-between;
+        }
+
+        .nav-item {
+         flex: 1;
+        }
+
+        .nav-link {
+         display: block;
+         text-align: center;
+         padding: 15px;
+         text-decoration: none;
+        }
+
+        .nav-link:hover {
+         background-color: #f8f9fa;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        footer p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <header class="mt-4">
+                <h1>Reclamos</h1>
+                <nav>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../html/listado.html">Autos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../html/contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../html/reclamos.html">Reclamos</a></li>
+                    </ul>
+                </nav>
+            </header>
+    
+            <main class="mt-4">
+                <section>
+                    <h2>Formulario de Reclamos</h2>
+                    <p>Si tienes un inconveniente, completa el formulario y nos contactaremos pronto.</p>
+                    <form action="enviar_reclamo.php" method="post">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Reclamo</button>
+                    </form>
+                </section>
+    
+                <section class="mt-4">
+                    <h2>Información de Contacto</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Teléfono:</strong> 123-456-7890</li>
+                        <li class="list-group-item"><strong>Email:</strong> soporte@tiendadeautos.com</li>
+                        <li class="list-group-item"><strong>Dirección:</strong> Av. de los Autos 123, Ciudad</li>
+                    </ul>
+                </section>
+    
+                <section class="mt-4">
+                    <h2>Nuestra Política de Reclamos</h2>
+                    <p>Todos los reclamos serán atendidos en un plazo de 48 horas. Gracias por tu comprensión.</p>
+                </section>
+            </main>
+    
+            <footer class="mt-4">
+                <p>&copy; 2024 Tienda de Autos. Todos los derechos reservados.</p>
+            </footer>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    
+</body>
+</html>
